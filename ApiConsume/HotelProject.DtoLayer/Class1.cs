@@ -1,4 +1,4 @@
-﻿namespace HotelProject.BusinessLayer
+﻿namespace HotelProject.DtoLayer
 {
     public class Class1
     {
