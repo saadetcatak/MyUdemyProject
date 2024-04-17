@@ -31,13 +31,16 @@ namespace HotelProject.WebApi.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id) 
         {
             var values=_serviceService.TGetByID(id);
             _serviceService.TDelete(values);
             return Ok();
         }
+
+
+
 
         [HttpPut]
         public IActionResult UpdateService(Service Service)
