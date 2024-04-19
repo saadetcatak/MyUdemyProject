@@ -16,18 +16,20 @@ namespace HotelProject.WebUI.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public PartialViewResult _SubscribePartial()
         {
             return PartialView();
         }
+
         [HttpPost]
         public async Task<IActionResult> _SubscribePartial(CreateSubscribeDto createSubscribeDto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createSubscribeDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            await client.PostAsync("http://localhost:3523/api/Subscribe", stringContent);
+            await client.PostAsync("http://localhost:5111/api/Subscribe", stringContent);
             return RedirectToAction("Index", "Default");
         }
     }
